@@ -43,8 +43,19 @@
         type="date"
         id="publicationDate"
         name="publicationDate"
+        required
         [(ngModel)]="book.publication_date"
+        #publication_date="ngModel"
       />
+      <div
+        class="error-message"
+        *ngIf="
+          publication_date.invalid &&
+          (publication_date.dirty || publication_date.touched)
+        "
+      >
+        Publication Date is required.
+      </div>
     </div>
 
     <button type="submit" [disabled]="bookForm.invalid">Add Book</button>
