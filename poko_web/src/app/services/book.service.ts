@@ -28,14 +28,9 @@ export class BookService {
     );
   }
 
-  getBooksByQuery(author?: string, title?: string): Observable<Book[]> {
+  getBooksByTitle(title: string): Observable<Book[]> {
     let params = new HttpParams();
-    if (author) {
-      params = params.set('author', author);
-    }
-    if (title) {
-      params = params.set('title', title);
-    }
+    params = params.set('title', title);
 
     return this.http.get<Book[]>(environment.apiURL, {
       params: params,
