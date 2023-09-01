@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Book } from '../models/book.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BookService } from '../services/book.service';
 
 @Component({
